@@ -18,8 +18,8 @@ class LoginRequiredMiddleware:
             '/users/',
             '/users/create/',
             '/admin/',
-            '/admin/login/'
-            '/favicon.ico'
+            '/admin/login/',
+            '/favicon.ico',
         ]
 
     def __call__(self, request):
