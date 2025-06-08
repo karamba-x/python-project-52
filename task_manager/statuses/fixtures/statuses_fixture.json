@@ -1,0 +1,10 @@
+[
+  {
+    "model": "statuses.status",
+    "pk": 4,
+    "fields": {
+      "name": "TestStatus",
+      "date_joined": "2025-06-08T12:05:01.065Z"
+    }
+  }
+]

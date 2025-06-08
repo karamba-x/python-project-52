@@ -17,6 +17,11 @@ class UserCreateView(CreateView):
     template_name = 'users/form.html'
     success_url = reverse_lazy('login')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['is_update'] = False
+        return context
+
     def form_valid(self, form):
         messages.success(self.request, _("User successfully registrated"))
         return super().form_valid(form)
