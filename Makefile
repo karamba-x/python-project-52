@@ -5,7 +5,7 @@ build:
 	./build.sh
 
 collectstatic:
-	python manage.py collectstatic
+	python manage.py collectstatic --noinput
 
 migrate:
 	python manage.py migrate --noinput
