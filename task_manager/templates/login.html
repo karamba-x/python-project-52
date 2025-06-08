@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% load i18n %}
+
+
+{% block content %}
+<h1 class="my-4">Вход</h1>
+
+{% if form.non_field_errors %}
+<div class="text-danger mb-3">
+  {% for error in form.non_field_errors %}
+  {{ error }}
+  {% endfor %}
+</div>
+{% endif %}
+
+<form method="post">
+  {% csrf_token %}
+  {% for field in form %}
+  <div class="mb-3">
+    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+    {{ field }}
+  </div>
+  {% endfor %}
+
+  <input class="btn btn-primary" type="submit"
+         value='{% trans "Login" %}'>
+</form>
+{% endblock %}
