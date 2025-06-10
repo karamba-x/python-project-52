@@ -30,7 +30,6 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-
 MESSAGE_TAGS = {
     message_constants.DEBUG: 'debug',
     message_constants.INFO: 'info',
@@ -58,6 +57,8 @@ INSTALLED_APPS = [
     'django_bootstrap5',
     'task_manager.users',
     'task_manager.statuses',
+    'task_manager.tasks',
+    'django_filters',
 ]
 
 MIDDLEWARE = [

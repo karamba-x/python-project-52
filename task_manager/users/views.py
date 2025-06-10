@@ -64,10 +64,10 @@ class UserDeleteView(DeleteView):
         return super().dispatch(request, *args, **kwargs)
 
     def form_valid(self, form):
-    #     user = self.get_object()
-    #     if user.tasks_created.exists():
-    #         messages.error(self.request, _('''Cannot delete user
-    #                                        because it is in use'''))
-    #         return redirect(self.success_url)
+        user = self.get_object()
+        if user.tasks_created.exists():
+            messages.error(self.request, _('''Cannot delete user
+                                           because it is in use'''))
+            return redirect(self.success_url)
         messages.success(self.request, _('User successfully deleted'))
         return super().form_valid(form)
