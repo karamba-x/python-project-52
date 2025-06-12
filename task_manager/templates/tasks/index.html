@@ -17,7 +17,10 @@
         <label for="id_executor" class="form-label">{% translate "Executor" %}</label>
         {{ filter.form.executor }}
       </div>
-
+      <div class="mb-3">
+        <label for="id_labels" class="form-label">{% translate "Label" %}</label>
+        {{ filter.form.labels }}
+      </div>
       <div class="form-check mb-3">
         {{ filter.form.user_tasks }}
         <label for="id_user_tasks" class="form-check-label">{% translate "Only your tasks" %}</label>

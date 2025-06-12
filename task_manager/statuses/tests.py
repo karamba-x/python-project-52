@@ -3,7 +3,7 @@ from django.urls import reverse
 from task_manager.statuses.models import Status
 
 class StatusesTests(TestCase):
-    fixtures = ['users_fixture.json', 'statuses_fixture.json']
+    fixtures = ['users.json', 'statuses.json']
 
     def setUp(self):
         from django.contrib.auth.models import User

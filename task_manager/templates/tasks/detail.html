@@ -31,7 +31,9 @@
         <div class="col">
           <h6>{% trans "Labels" %}:</h6>
           <ul>
-            <li>To be continue....</li>
+            {% for label in task.labels.all %}
+            <li>{{ label.name }}</li>
+            {% endfor %}
           </ul>
         </div>
       </div>

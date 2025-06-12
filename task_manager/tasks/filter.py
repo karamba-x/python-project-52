@@ -6,6 +6,7 @@ from django.utils.translation import gettext_lazy as _
 from task_manager.statuses.models import Status
 
 from .models import Task
+from ..labels.models import Label
 
 
 class TaskFilter(django_filters.FilterSet):
@@ -22,14 +23,15 @@ class TaskFilter(django_filters.FilterSet):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
         self.form.fields["executor"].label_from_instance = lambda obj: \
             f"{obj.first_name} {obj.last_name}"
 
-    # labels = django_filters.ModelChoiceFilter(
-    #     queryset=Label.objects.all(),
-    #     label=_('Labels'),
-    #     widget=forms.Select(attrs={'class': 'form-select'}),
-    # )
+    labels = django_filters.ModelChoiceFilter(
+        queryset=Label.objects.all(),
+        label=_('Labels'),
+        widget=forms.Select(attrs={'class': 'form-select'}),
+    )
 
     user_tasks = django_filters.BooleanFilter(
         method='user_tasks_filter',

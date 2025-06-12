@@ -1,0 +1,14 @@
+[
+  {
+    "model": "tasks.task",
+    "pk": 2,
+    "fields": {
+      "name": "задача",
+      "description": "тест",
+      "status": 4,
+      "author": 2,
+      "executor": 4,
+      "date_joined": "2025-04-19T19:03:18.477Z"
+    }
+  }
+]

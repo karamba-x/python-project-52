@@ -1,0 +1,10 @@
+[
+  {
+    "model": "labels.label",
+    "pk": 1,
+    "fields": {
+      "name": "Production",
+      "date_joined": "2025-04-20T14:32:52.939Z"
+    }
+  }
+]

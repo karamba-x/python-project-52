@@ -3,7 +3,7 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 
 class UserViewTests(TestCase):
-    fixtures = ["users_fixture.json"]
+    fixtures = ["users.json"]
 
     def setUp(self):
         self.user = User.objects.get(pk=1)  # bigsmoke

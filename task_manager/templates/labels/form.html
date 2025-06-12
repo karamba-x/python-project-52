@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block content %}
-  <h1 class="my-4">{% if is_update %}{% translate "Change User" %}{% else %}{% translate "Registration" %}{% endif %}</h1>
+<h1 class="my-4">{% if is_update %}{% trans "Update label" %}{% else %}{% trans "Create label" %}{% endif %}</h1>
 <form method="post">
   {% csrf_token %}
 
@@ -30,8 +30,6 @@
     {% endif %}
   </div>
   {% endfor %}
-
-  <input class="btn btn-primary" type="submit"
-         value="{% if is_update %}{% trans 'Change' %}{% else %}{% trans 'Register' %}{% endif %}">
+  <input class="btn btn-primary" type="submit" value="{% if is_update %}{% trans 'Edit' %}{% else %}{% trans 'Create' %}{% endif %}">
 </form>
 {% endblock %}
